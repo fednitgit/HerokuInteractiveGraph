@@ -19,7 +19,7 @@ app = dash.Dash(__name__, external_stylesheets=[dbc.themes.DARKLY])
 
 server = app.server
 
-dash_app.layout = html.Div([
+app.layout = html.Div([
     dcc.Graph(id='graph-with-slider'),
     dcc.Slider(
         id='year-slider',
@@ -32,7 +32,7 @@ dash_app.layout = html.Div([
 ])
 
 
-@dash_app.callback(
+@app.callback(
     Output('graph-with-slider', 'figure'),
     Input('year-slider', 'value'))
 
